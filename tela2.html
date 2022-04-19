@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="aplication.css">
+    <link rel="stylesheet" href="app.java">
+</head>
+<body>
+    <main>
+        
+        <form>
+            <header class="inicio">
+                <h2>Instituto Brasileiro de Geografia e Estatistica</h2> 
+                
+            </header>
+            <div class="table1">
+                <div class="titulo1"><h1>Informações</h1></div>
+            <table border="2">
+                <tr>
+                    <td>Ano</td>
+                    <td>Indice de evasão ensino médio</td>
+                    <td>Quantidade de escolas / Municipio</td>
+                    <td>Quantidade de vagas no ens. médio</td>
+                    <td>IDH</td>
+                </tr>
+                <tr>
+                    <td>2018</td>
+                    <td>4,7%</td>
+                    <td>Almeirim(113)</td>
+                    <td>359.331</td>
+                    <td>0.698</td>
+                </tr>
+                <tr>
+                    <td>2019</td>
+                    <td>3,8</td>
+                    <td>Altamira(159)</td>
+                    <td>356.274</td>
+                    <td>0.753</td>
+                </tr>
+                <tr>
+                    <td>2020</td>
+                    <td>8%</td>
+                    <td>Belém(807)</td>
+                    <td>354.447</td>
+                    <td>0.754</td>
+                </tr>
+                <tr>
+                    <td>2021</td>
+                    <td>12,1</td>
+                    <td>Ananindeua(283)</td>
+                    <td>356.234</td>
+                    <td>0.755</td>
+                </tr>
+                <tr>
+                    <td>2022</td>
+                    <td>7,8%</td>
+                    <td>Bragança(191)</td>
+                    <td>357.123</td>
+                    <td>0.755</td>
+                </tr>
+            </table>
+            </div>
+            <div id = "chart">
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>
+        google.charts.load('current', {packages: ['corechart']})
+        google.charts.setOnLoadCallback(drawChart)
+    
+        function drawChart(){
+            
+            const container = document.querySelector('#chart')
+            const data = new google.visualization.arrayToDataTable([
+                [ 'Character', 'Quantidade de vagas ens. médio'],
+                [ '2018', 359331],
+                [ '2019', 356274],
+                [ '2020', 354447],
+                [ '2021', 356234],
+                [ '2022', 357123]
+
+            ])
+            const options = {
+                title: 'Quantidade de vagas - ensino médio',
+                height: 400,
+                width: 720
+
+            }
+
+            const chart = new google.visualization.BarChart(container)
+            chart.draw(data, options)
+        }
+        </script>
+            </div>
+
+
+
+
+                
+            <div class="info">
+                <h3 class="titulo">Informação</h3>
+                <div class="container">
+                    <ul>
+                        <li><a class="menu" href="#">Educação</a>
+                        <ul class="opcao1">
+                            <input type="checkbox" name="Educação" id="check01">
+                            <label for="check01">Indice de evasão ensino médio</label><br>
+                            <input type="checkbox" name="Educação" id="check02">
+                            <label for="check02">Quantidade de escolas / Municipio</label><br>
+                            <input type="checkbox" name="Educação" id="check03">
+                            <label for="check03">Quantidade de vagas no ensino médio </label><br>
+                            <input type="checkbox" name="Educação" id="check04">
+                            <label for="check04">IDH</label>
+                        </ul></li>
+                    </ul>
+                </div>
+                
+                <div class="container">
+                    <ul>
+                        <li><a class="menu" href="#">Agricultura</a>
+                            <ul class="opcao1">
+                                <input type="checkbox" name="agricultua" id="agri1">
+                                <label for="agri1">Produção</label><br>
+                                <input type="checkbox" name="agricultura" id="agri2">
+                                <label for="agri2">Pesquisa trimestral do leite</label>
+                            </ul></li>
+                    </ul>
+                    
+                </div>
+
+                <div class="container">
+                    <ul>
+                        <li><a class="menu" href="#">Indústria</a>
+                            <ul class="opcao1">
+                                <input type="checkbox" name="Indústria" id="in01">
+                                <label for="in01">Alimentos</label><br>
+                                <input type="checkbox" name="Indústria"id="in02">
+                                <label for="in02">Mobialiários</label><br>
+                                <input type="checkbox" name="Indústria" id="in03">
+                                <label for="in03">Transportes</label><br>
+                            </ul></li>
+                    </ul>
+                    
+                </div>
+
+                <div class="container">
+                    <ul>
+                        <li><a class="menu" href="#">Infraestrutura</a>
+                            <ul class="opcao1">
+                                <input type="checkbox" name="Infraestrutura" id="inf1">
+                                <label for="inf1">Pavimentações</label><br>
+                                <input type="checkbox" name="Infraestrutura"id="inf2">
+                                <label for="inf2">Obras de hospitais</label><br>
+                            </ul></li>
+                    </ul>                   
+                </div>
+                
+                <div class="container">
+                    <ul>
+                        <li><a class="menu" href="#">População estimada</a>
+                            <ul class="opcao1">
+                                <input type="checkbox" name="População" id="p1">
+                                <label for="p1">Urbana</label><br>
+                                <input type="checkbox" name="População"id="p2">
+                                <label for="p2">Rural</label>
+                            </ul></li>
+                    </ul>
+                </div>
+
+                <div class="container">
+                    <ul>    
+                        <li><a class="menu" href="#">Área territorial</a>
+                            <ul class="opcao1">
+                                <input type="checkbox" name="Area" id="A1">
+                                <label for="A1">Total</label><br>
+                                <input type="checkbox" name="Area"id="A2">
+                                <label for="A2">Capital</label>
+                            </ul></li>
+                    </ul>
+                    
+                    <br>
+                </div>
+
+               
+            </div>
+                    
+                <div class="info">
+                    <h3 class="titulo">Conhecimento</h3> 
+                <div class="container">
+                    <ul>
+                        <li><a class="menu" href="#">Social</a>
+                        <ul class="opcao1">
+                            <input type="checkbox" name="social" id="socia1">
+                            <label for="social1">Habitação</label><br>
+                            <input type="checkbox" name="social"id="social2">
+                            <label for="social2">Trabalho</label><br>
+                            <input type="checkbox" name="social" id="social3">
+                            <label for="social3">Saúde</label><br>
+                        </ul></li>
+                </div>   
+                   <div class="container">
+                       <ul>
+                        <li><a class="menu" href="#">Econômico</a>
+                            <ul class="opcao1">
+                        
+                            <input type="checkbox" name="Econômico" id="eco1">
+                            <label for="eco1">Comercio</label><br>
+                            <input type="checkbox" name="Econômico"id="eco2">
+                            <label for="eco2">Finanças Públicas</label><br>
+                            <input type="checkbox" name="Econômico" id="eco3">
+                            <label for="eco3">PIB</label><br>
+                            <input type="checkbox" name="Econômico" id="eco4">
+                            <label for="eco4"> PIB per capita</label>
+                        </ul></li>
+                      
+                   
+                   </div>
+                       <div class="container">
+                           <ul>
+                           <li><a class="menu" href="#">Ambiental</a>
+                               <ul class="opcao1">
+
+                                <input type="checkbox" name="Ambiental" id="am1">
+                                <label for="eco1">Vegetação</label><br>
+                                <input type="checkbox" name="Ambiental"id="am2">
+                                <label for="eco2">Biodiversidade</label><br>
+                            </ul></li>
+                        </ul>
+                        
+                        
+                       </div>   
+                </div>    
+                  
+                
+                
+                    <input class="button" type="button" value="Pesquisar">
+                    
+                </form>
+                
+            
+    </main>
+    
+</body>
+</html>
